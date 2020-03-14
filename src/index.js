@@ -1,5 +1,7 @@
 import express from 'express';
 import bodyParser from 'body-parser';
+import './db/mongodb';
+
 const PORT = 3000;
 const app = express();
 

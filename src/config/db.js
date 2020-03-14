@@ -1,0 +1,5 @@
+export default {
+  MONGO_DB_USER: 'guest',
+  MONGO_DB_PASS: 'guest',
+  MONGO_URL: 'mongodb://battle-ship-db/battleship-apis?authSource=admin'
+};
