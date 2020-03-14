@@ -52,6 +52,14 @@ const GameSchema = new Schema({
   }
 });
 
+GameSchema.options.toJson = {
+  tranform: function(dock, game, options) {
+    game.id = game._id;
+    delete game._id;
+    return game;
+  }
+};
+
 const Game = mongoose.model('Game', GameSchema);
 
 export default Game;
