@@ -9,10 +9,21 @@ services:
       - /usr/app/node_modules/
       - .:/usr/app
     ports:
-      - '3000:3000'
+      - '3333:3000'
     networks:
       - battle-ship-networks
     command: ['npm', 'start']
+
+  mongodb:
+    image: mongo:4.2.3
+    container_name: battle-ship-db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: guest
+      MONGO_INITDB_ROOT_PASSWORD: guest
+    networks:
+      - battle-ship-networks
+    ports:
+      - '28888:27017'
 
 networks:
   battle-ship-networks:
