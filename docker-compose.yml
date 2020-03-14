@@ -1,0 +1,19 @@
+version: '3.7'
+services:
+  battle-ship-api:
+    build:
+      context: .
+    container_name: battle-ship-api
+    working_dir: /usr/app/
+    volumes:
+      - /usr/app/node_modules/
+      - .:/usr/app
+    ports:
+      - '3000:3000'
+    networks:
+      - battle-ship-networks
+    command: ['npm', 'start']
+
+networks:
+  battle-ship-networks:
+    driver: bridge
