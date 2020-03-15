@@ -1,7 +1,7 @@
 import express from 'express';
 import { startGame, getGameStatus } from '../controller/game';
-import { placeShip } from '../controller/defender';
-import { validatePlaceShip } from '../validations/defender';
+import { placeShip } from '../controller/place';
+import { validatePlaceShip } from '../validations/place';
 
 const router = express.Router();
 
