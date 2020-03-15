@@ -1,9 +1,15 @@
-import { body } from 'express-validator';
+import mongoose from 'mongoose';
+import { body, param } from 'express-validator';
 import { validatetions } from '../utils/validations';
 import Game from '../models/game';
 import { getShipByName } from '../utils/ship';
 
+const ObjectId = mongoose.Types.ObjectId;
+
 export const validatePlaceShip = validatetions([
+  param('id')
+    .isMongoId()
+    .withMessage('ID is in valid.'),
   body('xPosition')
     .notEmpty()
     .withMessage('xPosition must be require')
@@ -21,10 +27,12 @@ export const validatePlaceShip = validatetions([
     .withMessage('ship must be  battleship, cruiser, submarine, destroyer')
     .custom(async (value, { req }) => {
       const _id = req.params.id;
-      const game = await Game.findById(_id);
-      const { count } = getShipByName(value);
-      if (parseInt(game[value]) == parseInt(count)) {
-        throw `${value} is more than maximum allowed value to placed (${count}).`;
+      if (ObjectId.isValid(_id)) {
+        const game = await Game.findById(_id);
+        const { count } = getShipByName(value);
+        if (parseInt(game[value]) == parseInt(count)) {
+          throw `${value} is more than maximum allowed value to placed (${count}).`;
+        }
       }
     }),
   body('vertical')
