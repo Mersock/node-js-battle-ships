@@ -51,7 +51,7 @@ Response
 
 ##### Place Your Ship:
 
-> **`GET /game/{id}/place`**
+> **`POST /game/{id}/place`**
 
 Request
 
@@ -97,7 +97,7 @@ Response
 
 ##### Attack The Ship:
 
-> **`GET /game/{id}/attack`**
+> **`POST /game/{id}/attack`**
 
 Request
 
