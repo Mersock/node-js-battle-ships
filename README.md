@@ -55,12 +55,21 @@ Response
 
 Request
 
-| Key       | Value                          | Example                                   |
-| --------- | ------------------------------ | ----------------------------------------- |
-| yPosition | Integer(required) between 0-9  | 1                                         |
-| xPosition | Integer(required) between 0-9  | 4                                         |
-| ship      | String(required)               | battleship, cruiser, submarine, destroyer |
-| vertical  | boolean(optional) defaul false | true                                      |
+| Key       | Value                           | Example                                   |
+| --------- | ------------------------------- | ----------------------------------------- |
+| yPosition | Integer(required) between 0-9   | 1                                         |
+| xPosition | Integer(required) between 0-9   | 4                                         |
+| ship      | String(required)                | battleship, cruiser, submarine, destroyer |
+| vertical  | boolean(optional) default false | true                                      |
+
+```javascript
+{
+	"xPosition":1,
+	"yPosition":3,
+	"ship":"battleship",
+	"vertical":true
+}
+```
 
 Response
 
@@ -96,6 +105,13 @@ Request
 | --------- | ----------------------------- | ------- |
 | yPosition | Integer(required) between 0-9 | 1       |
 | xPosition | Integer(required) between 0-9 | 4       |
+
+```javascript
+{
+	"xPosition":1,
+	"yPosition":3
+}
+```
 
 Response
 
