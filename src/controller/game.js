@@ -9,7 +9,6 @@ export const startGame = (req, res) => {
 };
 
 export const getGameStatus = async (req, res) => {
-  const _id = req.params.id;
   try {
     const _id = req.params.id;
     const game = await Game.findById(_id);
