@@ -6,15 +6,14 @@ import { responseWithError, responseWithData } from '../utils/response';
 export const attackShip = async (req, res) => {
   const _id = req.params.id;
   const game = await Game.findById(_id);
-  const { status } = game;
   if (!game) {
     return res.status(404).send(responseWithError('Not Found.', 404));
   }
-  if (status == 'ended')
+  if (game.status == 'ended')
     return res
       .status(400)
       .send(responseWithError('This game already finish.', 400));
-  if (status != 'attacking')
+  if (game.status != 'attacking')
     return res
       .status(400)
       .send(
@@ -29,7 +28,7 @@ export const attackShip = async (req, res) => {
 
   game.attack_count++;
 
-  let status = '';
+  let status;
   if (point == 0) status = 'Miss';
   else {
     // Checks remaining ship is left.
@@ -49,10 +48,10 @@ export const attackShip = async (req, res) => {
       game.total_ships--;
     }
 
-    // when all ships have been sunk
+    // when all ships have been sunk.
     if (game.total_ships == 0) {
       status =
-        'Win! You have completed the game in ' + game.attack_count + ' moves';
+        'Win !You have completed the game in ' + game.attack_count + ' moves';
       game.status = 'ended';
     }
 
@@ -68,5 +67,5 @@ export const attackShip = async (req, res) => {
   place.hit = point === 0;
   await place.save();
 
-  return res.send(status);
+  return res.send(responseWithData({ status }));
 };
