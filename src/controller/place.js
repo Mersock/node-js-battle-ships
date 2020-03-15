@@ -44,7 +44,7 @@ export const placeShip = async (req, res) => {
           )
             return res.status(422).send(
               responseValidateError('Invalid value.', 422, {
-                ship: ['cannot place.The area is occupied or overlap.']
+                ship: ['Cannot place.The area is occupied or overlap.']
               })
             );
         }
