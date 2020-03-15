@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "env-cmd ./.env.test jest --watch --runInBand",
-    "start": "env-cmd ./.env.dev nodemon --exec babel-node src/index"
+    "test": "env-cmd -f ./.env.test jest --watchAll --runInBand",
+    "start": "env-cmd -f ./.env.dev nodemon --exec babel-node src/index"
   },
   "jest": {
     "testEnvironment": "node"
