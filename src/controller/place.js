@@ -61,16 +61,10 @@ export const placeShip = async (req, res) => {
       game.status = 'attacking';
       game.start_state = game.current_state;
     }
-
-    //
+    // current_state pending
     game.markModified('current_state');
-
-    return game
-      .save()
-      .then(game => res.send(game))
-      .catch(err => {
-        res.status(400).send(responseWithError(err.message, 400));
-      });
+    const setGame = await game.save();
+    return res.send(responseWithData(setGame));
   } catch (error) {
     return res.status(400).send(responseWithError(error.message, 400));
   }
