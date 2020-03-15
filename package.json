@@ -4,8 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon --exec babel-node src/index"
+    "test": "env-cmd ./.env.test jest --watch --runInBand",
+    "start": "env-cmd ./.env.dev nodemon --exec babel-node src/index"
+  },
+  "jest": {
+    "testEnvironment": "node"
   },
   "keywords": [],
   "author": "",
