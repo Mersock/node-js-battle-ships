@@ -54,12 +54,13 @@ Response
 > **`GET /game/{id}/place`**
 
 Request
-Key | Value | Example
------------- | ------------- | -------------
-yPosition | Integer(required) between 0-9 | 1
-xPosition | Integer(required) between 0-9 | 4
-ship | String(required) |battleship, cruiser, submarine, destroyer
-vertical | boolean(optional) defaul false | true
+
+| Key       | Value                          | Example                                   |
+| --------- | ------------------------------ | ----------------------------------------- |
+| yPosition | Integer(required) between 0-9  | 1                                         |
+| xPosition | Integer(required) between 0-9  | 4                                         |
+| ship      | String(required)               | battleship, cruiser, submarine, destroyer |
+| vertical  | boolean(optional) defaul false | true                                      |
 
 Response
 
@@ -90,10 +91,11 @@ Response
 > **`GET /game/{id}/attack`**
 
 Request
-Key | Value | Example
------------- | ------------- | -------------
-yPosition | Integer(required) between 0-9 | 1
-xPosition | Integer(required) between 0-9 | 4
+
+| Key       | Value                         | Example |
+| --------- | ----------------------------- | ------- |
+| yPosition | Integer(required) between 0-9 | 1       |
+| xPosition | Integer(required) between 0-9 | 4       |
 
 Response
 
