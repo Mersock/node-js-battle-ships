@@ -8,7 +8,13 @@
 3. Start your server on your local machine by using
 
 ```
-$ docker compose up -d
+$ docker-compose up -d
+```
+
+if want to stop server
+
+```
+$ docker-compose up -d
 ```
 
 4. Server will start on port 3333 and your brwser http://localhost:3333 with connection to MongoDB on port 28888.
