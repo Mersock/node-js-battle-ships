@@ -49,7 +49,7 @@ Response
 }
 ```
 
-##### Place Ships:
+##### Place Your Ship:
 
 > **`GET /game/{id}/place`**
 
@@ -85,7 +85,7 @@ Response
 }
 ```
 
-##### Attack Ships:
+##### Attack The Ship:
 
 > **`GET /game/{id}/attack`**
 
