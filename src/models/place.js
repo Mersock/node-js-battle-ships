@@ -6,8 +6,8 @@ const PlaceSchema = new Schema(
   {
     game_id: { type: mongoose.Types.ObjectId, required: true },
     move_at: { type: Date, default: Date.now },
-    xPos: { type: Number, required: true },
-    yPos: { type: Number, required: true },
+    xPosition: { type: Number, required: true },
+    yPosition: { type: Number, required: true },
     hit: { type: Boolean, required: true }
   },
   {
